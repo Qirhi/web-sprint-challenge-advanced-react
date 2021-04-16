@@ -25,6 +25,13 @@ export default class PlantList extends Component {
   
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
+  componentDidMount() {
+    axios.get('http://localhost:3333/plants')
+      .then(res => {
+        console.log(res);
+      });
+  }
+  
   render() {
     return (
       <main className={this.props.darkMode ? "dark-mode plant-list" : "plant-list"}>
